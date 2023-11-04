@@ -1,0 +1,57 @@
+.poster-container {
+    position: relative;
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#prevArrow { left: 10px; }
+#nextArrow { right: 10px; }
+
+.poster {
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform-origin: top center;
+    transform: scale(0.7);
+    opacity: 0.6;
+    transition: all 1.5s;
+    pointer-events: none;
+    left: 50%;
+    transform: scale(0.7) translateX(-150%)
+}
+
+.poster img {
+    max-width: 100%;
+    height: auto;
+}
+
+.poster.active {
+    transform: scale(1.2) translateX(-50%);
+    opacity:1;
+}
+
+.poster.left {
+    transform: scale(1) translateX(-200%);
+}
+
+.poster.right {
+    transform: scale(1) translateX(100%);
+}
+
+.out-of-view {
+    opacity: 0;
+    pointer-events: none;
+}
